@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import TaskService from '../services/TaskService';
+import TaskService from '../service/TaskService';
 
 export default {
   data() {
@@ -48,3 +48,4 @@ export default {
   }
 };
 </script>
+../service/TaskService

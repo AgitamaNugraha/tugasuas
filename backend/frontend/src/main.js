@@ -1,4 +1,7 @@
-import { createApp } from 'vue'
-import App from './TaskList.vue'
+/* eslint-disable */
 
-createApp(App).mount('#app')
+import { createApp } from 'vue';
+import App from './app.vue';
+import router from './router';
+
+createApp(App).use(router).mount('#app');

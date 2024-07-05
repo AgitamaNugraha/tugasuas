@@ -1,16 +1,18 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import TaskList from '../components/TaskList.vue';
-import TaskDetail from '../../frontend/src/components/TaskDetail.vue';
+import TaskDetail from '../components/TaskDetail.vue';
 import TaskForm from '../components/TaskForm.vue';
 
-Vue.use(Router);
+const routes = [
+  { path: '/tasks', component: TaskList },
+  { path: '/tasks/new', component: TaskForm },
+  { path: '/tasks/:id', component: TaskDetail },
+  { path: '/tasks/:id/edit', component: TaskForm }
+];
 
-export default new Router({
-  routes: [
-    { path: '/tasks', component: TaskList },
-    { path: '/tasks/new', component: TaskForm },
-    { path: '/tasks/:id', component: TaskDetail },
-    { path: '/tasks/:id/edit', component: TaskForm }
-  ]
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 });
+
+export default router;
